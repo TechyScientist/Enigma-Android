@@ -38,8 +38,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tlLamps"
         app:layout_constraintTop_toBottomOf="@id/llRotors"
-        app:layout_constraintBottom_toBottomOf="@id/tlKeys"
-        app:layout_constraintVertical_bias="0.35"
+        app:layout_constraintBottom_toTopOf="@id/tlKeys"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <TableRow

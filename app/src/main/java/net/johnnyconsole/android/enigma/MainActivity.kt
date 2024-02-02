@@ -3,6 +3,7 @@ package net.johnnyconsole.android.enigma
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(inState: Bundle) {
         super.onRestoreInstanceState(inState)
         enigma = inState.getSerializable("enigma", Enigma::class.java)!!
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 
     @SuppressWarnings("DiscouragedApi")
