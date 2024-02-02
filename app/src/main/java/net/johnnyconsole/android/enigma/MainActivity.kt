@@ -3,10 +3,8 @@ package net.johnnyconsole.android.enigma
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.appcompat.content.res.AppCompatResources
+import android.widget.TextView
 import net.johnnyconsole.android.enigma.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -30,9 +28,19 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = RotorAdapter(this, resources.getStringArray(R.array.alphabet))
 
-        binding.RotorL!!.adapter = adapter
-        binding.RotorM!!.adapter = adapter
-        binding.RotorR!!.adapter = adapter
+        binding.RotorL.adapter = adapter
+        binding.RotorM.adapter = adapter
+        binding.RotorR.adapter = adapter
 
     }
+
+    @SuppressWarnings("discouragedApi")
+    private fun clearLamps() {
+        for(i in 0..25) {
+            val id = resources.getIdentifier("Lamp" + ('A' + i), "id", packageName)
+            binding.root.findViewById<TextView>(id).setTextColor(getColor(android.R.color.darker_gray))
+        }
+    }
+
+
 }
