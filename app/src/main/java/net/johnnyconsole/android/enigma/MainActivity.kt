@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         enigma = inState.getSerializable("enigma", Enigma::class.java)!!
     }
 
+    @SuppressWarnings("DiscouragedApi")
     fun onLetterKeyPressed(view: View) {
         clearLamps()
         val letter = (view as Button).text[0]
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         lamp.setTextColor(getColor(R.color.yellow))
     }
 
-    @SuppressWarnings("discouragedApi")
+    @SuppressWarnings("DiscouragedApi")
     private fun clearLamps() {
         for(i in 0..25) {
             val id = resources.getIdentifier("Lamp" + ('A' + i), "id", packageName)
