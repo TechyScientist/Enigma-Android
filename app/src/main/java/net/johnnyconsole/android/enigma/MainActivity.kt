@@ -3,7 +3,9 @@ package net.johnnyconsole.android.enigma
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.TextView
 import net.johnnyconsole.android.enigma.algorithm.Enigma
 import net.johnnyconsole.android.enigma.algorithm.Plugboard
@@ -54,6 +56,13 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(inState: Bundle) {
         super.onRestoreInstanceState(inState)
         enigma = inState.getSerializable("enigma", Enigma::class.java)!!
+    }
+
+    fun onLetterKeyPressed(view: View) {
+        clearLamps()
+        val letter = (view as Button).text[0]
+        val lamp = binding.root.findViewById<TextView>(resources.getIdentifier("Lamp$letter", "id", packageName))
+        lamp.setTextColor(getColor(R.color.yellow))
     }
 
     @SuppressWarnings("discouragedApi")
