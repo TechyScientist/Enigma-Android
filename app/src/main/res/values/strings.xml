@@ -29,6 +29,12 @@
     <string name="Y">Y</string>
     <string name="Z">Z</string>
 
+    <string name="back_button">Back</string>
+    <string name="save_button">Save</string>
+    <string name="rotors">Rotors:</string>
+    <string name="rings">Rings:</string>
+    <string name="reflector">Reflector:</string>
+
     <string-array name="alphabet">
         <item>A</item>
         <item>B</item>
