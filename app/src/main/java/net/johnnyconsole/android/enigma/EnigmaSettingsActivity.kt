@@ -30,16 +30,20 @@ class EnigmaSettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.title = getString(R.string.settings)
 
-        val rotorAdapter = RotorAdapter(this, resources.getStringArray(R.array.alphabet))
+        val rotorAdapter = RotorAdapter(this, arrayOf("I", "II", "III", "IV", "V"))
+        val ringAdapter = RotorAdapter(this, resources.getStringArray(R.array.alphabet))
         val reflectorAdapter = RotorAdapter(this, arrayOf("A", "B", "C"))
 
         binding.RotorL.adapter = rotorAdapter
         binding.RotorM.adapter = rotorAdapter
         binding.RotorR.adapter = rotorAdapter
-        binding.RingL.adapter = rotorAdapter
-        binding.RingM.adapter = rotorAdapter
-        binding.RingR.adapter = rotorAdapter
+        binding.RingL.adapter = ringAdapter
+        binding.RingM.adapter = ringAdapter
+        binding.RingR.adapter = ringAdapter
         binding.Reflector.adapter = reflectorAdapter
+
+        binding.RotorM.setSelection(1)
+        binding.RotorR.setSelection(2)
 
         binding.btBack.setOnClickListener {
             AlertDialog.Builder(this)
