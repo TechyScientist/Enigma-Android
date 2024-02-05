@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Enigma</string>
-    
+    <string name="settings">Enigma Settings</string>
+
     <string name="A">A</string>
     <string name="B">B</string>
     <string name="C">C</string>
@@ -27,7 +28,6 @@
     <string name="X">X</string>
     <string name="Y">Y</string>
     <string name="Z">Z</string>
-    <string name="settings">Enigma Settings</string>
 
     <string-array name="alphabet">
         <item>A</item>
@@ -57,8 +57,4 @@
         <item>Y</item>
         <item>Z</item>
     </string-array>
-    
-    
-    
-    
 </resources>
